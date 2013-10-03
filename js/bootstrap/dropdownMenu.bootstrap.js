@@ -1,5 +1,14 @@
+/**
+ * Bootstrap Dropdown Menu
+ *
+ * @package  jsTools
+ * @category bootstrap
+ * @author   Jonathan Sahm <contact@johnstyle.fr>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     https://github.com/johnstyle/jsTools.git
+ */
 (function($) {
-    $.fn.bsDropdownMenu = function(options) {
+    $.fn.dropdownMenu = function(options) {
         options = $.extend({}, options);
         function dropdownMenu(e) {
             $('li', $(e).parents('ul')).removeClass('active');
@@ -22,6 +31,6 @@
     }
 })(jQuery);
 
-$(function() {
-    $('.btn-group > ul.dropdown-menu > li > a').bsDropdownMenu();
+jQuery(function($) {
+    $('.btn-group > ul.dropdown-menu > li > a').dropdownMenu();
 });

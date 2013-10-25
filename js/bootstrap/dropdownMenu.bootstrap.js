@@ -7,9 +7,9 @@
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link     https://github.com/johnstyle/jsTools.git
  */
-(function($) {
+(function ($) {
 
-    $.fn.dropdownMenu = function(options) {
+    $.fn.dropdownMenu = function (options) {
 
         options = $.extend({}, options);
 
@@ -34,20 +34,30 @@
             }
         }
 
-        return this.each(function() {
+        return this.each(function () {
 
             if ($(this).parents('li').hasClass('active')) {
                 dropdownMenu(this);
             }
 
-            $(this).on('click', function(event) {
+            $(this).on('click', function (event) {
+
                 event.preventDefault();
+
+                var redirect = $(this).attr('href');
+
                 dropdownMenu(this);
+
+                if (redirect && redirect != '#') {
+                    return $(location).attr('href', redirect);
+                }
+
+                return true;
             });
         });
     }
 })(jQuery);
 
-jQuery(function($) {
+jQuery(function ($) {
     $('.btn-group > ul.dropdown-menu > li > a').dropdownMenu();
 });

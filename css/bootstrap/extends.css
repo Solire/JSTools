@@ -1,0 +1,23 @@
+/** Common */
+ol,
+ul {
+    list-style-position: inside
+}
+
+/** Panel */
+.panel > form > .table {
+    margin-bottom: 0;
+}
+
+/** Table */
+table.table tr.info td {
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    color: #3A87AD;
+}
+
+/** Alerts */
+.alert ol,
+.alert ul {
+    margin-bottom: 0
+}
